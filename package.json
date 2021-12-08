@@ -1,0 +1,30 @@
+{
+  "name": "autojwt",
+  "version": "0.1.0",
+  "description": "Browser extension to automatically find, parse, and copy JWT authorization tokens",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Jaaromy/autojwt.git"
+  },
+  "keywords": [
+    "extension"
+  ],
+  "author": "Jaaromy Zierse",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Jaaromy/autojwt/issues"
+  },
+  "homepage": "https://github.com/Jaaromy/autojwt#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^10.0.0",
+    "webextension-polyfill": "^0.8.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}

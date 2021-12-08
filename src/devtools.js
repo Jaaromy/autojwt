@@ -1,4 +1,4 @@
-chrome.devtools.network.onRequestFinished.addListener(
+browser.devtools.network.onRequestFinished.addListener(
     function (request) {
 
         for (const header in request.request.headers) {
@@ -6,12 +6,10 @@ chrome.devtools.network.onRequestFinished.addListener(
                 const element = request.request.headers[header];
 
                 if (element && element.name && element.name.toLowerCase() === 'authorization') {
-                    chrome.devtools.inspectedWindow.eval(
-                        'console.log("Header: " + unescape("' +
+                    browser.devtools.inspectedWindow.eval(
+                        'console.log("Authorization: " + unescape("' +
                         escape(JSON.stringify(element.value)) + '"))');
                 }
-                
-
             }
         }
 

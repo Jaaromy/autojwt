@@ -1,17 +1,23 @@
 <!doctype html>
 <html>
-  <head>
-    <title>AutoJWTs Panel</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="ag-grid.css" rel="stylesheet" type="text/css">
-    <link href="ag-theme-balham.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <h1>Roll Out!!</h1>
-    <button id="copy">Copy JWT to Clipboard</button>
-    <button id="jwtio">Open on jwt.io</button>
-    <div id="myGrid" style="width: 100%" class="ag-theme-balham"></div>
-    <script src="browser-polyfill.js"></script>
-    <script src="panel.js"></script>
-  </body>
+
+<head>
+  <title>AutoJWTs Panel</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="ag-grid.css" rel="stylesheet" type="text/css">
+  <link href="ag-theme-balham.css" rel="stylesheet" type="text/css">
+  <link href="xcode.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <h1>Roll Out!!</h1>
+  <button id="copy" class="button-50" >Copy JWT to Clipboard</button>
+  <button id="jwtio" class="button-50" >Open on jwt.io</button>
+  <button id="clear" class="button-50" >Clear</button>
+  <div id="myGrid" style="width: 100%" class="ag-theme-balham"></div>
+  <pre><code id="jwtContents"></code></pre>
+  <script src="browser-polyfill.js"></script>
+  <script src="panel.js"></script>
+</body>
+
 </html>

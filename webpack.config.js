@@ -28,7 +28,8 @@ module.exports = {
                 { from: 'images', to: 'images' },
                 { from: 'styles' },
                 { from: 'src/devtools.html' },
-                { from: 'src/panel/panel.html' }
+                { from: 'src/panel/panel.html' },
+                { from: 'vendor' }
             ],
 
         })

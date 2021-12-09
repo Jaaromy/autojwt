@@ -2,16 +2,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    /* Your regular webpack config, probably including something like this:
-    output: {
-      path: path.join(__dirname, 'distribution'),
-      filename: '[name].js'
+    entry: {
+        main: './src/devtools.js',
+        panel: './src/panel/panel.js'
     },
-    */
-
-    entry: './src/devtools.js',
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
     },
     mode: 'none',
@@ -20,9 +16,18 @@ module.exports = {
             patterns: [
                 { from: 'node_modules/webextension-polyfill/dist/browser-polyfill.min.js' },
                 { from: 'node_modules/webextension-polyfill/dist/browser-polyfill.min.js.map' },
+                { from: 'node_modules/webextension-polyfill/dist/browser-polyfill.js' },
+                { from: 'node_modules/webextension-polyfill/dist/browser-polyfill.js.map' },
+                { from: 'node_modules/ag-grid-community/dist/styles/ag-grid.css' },
+                { from: 'node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css' },
+                { from: 'node_modules/ag-grid-community/dist/styles/ag-theme-alpine-dark.css' },
+                { from: 'node_modules/ag-grid-community/dist/styles/ag-theme-balham.css' },
+                { from: 'node_modules/ag-grid-community/dist/styles/ag-theme-balham-dark.css' },
                 { from: 'manifest.json' },
                 { from: 'images', to: 'images' },
+                { from: 'styles' },
                 { from: 'devtools.html' },
+                { from: 'src/panel' },
                 { from: 'src/background.js' },
             ],
 

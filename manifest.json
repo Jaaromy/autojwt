@@ -5,7 +5,9 @@
     "manifest_version": 2,
     "permissions": [
         "storage",
-        "activeTab"
+        "activeTab",
+        "clipboardWrite",
+        "clipboardRead"
     ],
     "background": {
         "scripts": [

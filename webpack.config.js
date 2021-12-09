@@ -4,7 +4,8 @@ const path = require('path');
 module.exports = {
     entry: {
         main: './src/devtools.js',
-        panel: './src/panel/panel.js'
+        panel: './src/panel/panel.js',
+        background: './src/background.js'
     },
     output: {
         filename: '[name].js',
@@ -26,9 +27,8 @@ module.exports = {
                 { from: 'manifest.json' },
                 { from: 'images', to: 'images' },
                 { from: 'styles' },
-                { from: 'devtools.html' },
-                { from: 'src/panel' },
-                { from: 'src/background.js' },
+                { from: 'src/devtools.html' },
+                { from: 'src/panel/panel.html' }
             ],
 
         })

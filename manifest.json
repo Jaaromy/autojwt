@@ -7,7 +7,9 @@
         "storage",
         "activeTab",
         "clipboardWrite",
-        "clipboardRead"
+        "clipboardRead",
+        "tabs",
+        "<all_urls>"
     ],
     "background": {
         "scripts": [

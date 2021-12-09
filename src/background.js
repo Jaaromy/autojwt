@@ -1,34 +1,23 @@
-// browser.devtools.network.onRequestFinished.addListener(
-//     function (request) {
+import { tabs, runtime } from "webextension-polyfill";
 
-//         for (const header in request.request.headers) {
-//             if (Object.hasOwnProperty.call(request.request.headers, header)) {
-//                 const element = request.request.headers[header];
+function onCreated(tab) {
+    console.log(`Created new tab: ${tab.id}`);
+}
 
-//                 if (element && element.name && element.name.toLowerCase() === 'authorization') {
-//                     browser.devtools.inspectedWindow.eval(
-//                         'console.log("Header: " + unescape("' +
-//                         escape(JSON.stringify(element.value)) + '"))');
-//                     console.log('Header: ' + JSON.stringify(element.value));
-//                 }
+function onError(error) {
+    console.log(`Error: ${error}`);
+}
 
+function handleMessage(request, sender, sendResponse) {
 
-//             }
-//         }
+    if (sender.url != browser.runtime.getURL("panel.html")) {
+      return;
+    }
 
-//         // if (request._resourceType === 'xhr') {
-//         //     chrome.devtools.inspectedWindow.eval(
-//         //         'console.log("Large image: " + unescape("' +
-//         //         escape(JSON.stringify(request.request)) + '"))');
-//         // }
+    tabs.create({
+        url: `https://jwt.io/#debugger-io?token=${request.jwt}`
+    }).then(onCreated, onError);
 
-//     }
-// );
+}
 
-//   chrome.devtools.panels.create("AutoJWT",
-//     "images/get_started128.png",
-//     "panel.html",
-//     function(panel) {
-//       // code invoked on panel creation
-//     }
-// );
+runtime.onMessage.addListener(handleMessage); 

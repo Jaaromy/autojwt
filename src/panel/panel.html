@@ -10,23 +10,31 @@
 </head>
 
 <body>
-  <h1>Roll Out!!</h1>
-  <button id="copy" class="button-50" >Copy JWT to Clipboard</button>
-  <button id="jwtio" class="button-50" >Open on jwt.io</button>
-  <button id="clear" class="button-50" >Clear</button>
-  <button id="add" class="button-50" >Add</button>
+  <button id="copy" class="button-23">Copy JWT to Clipboard</button>
+  <button id="copyPayload" class="button-23">Copy Payload to Clipboard</button>
+  <button id="jwtio" class="button-23">Open on jwt.io</button>
+  <button id="clear" class="button-23">Clear</button>
   <div class="row">
-    <div id="myGrid" style="width: 65%" class="ag-theme-balham block"></div>
+    <div style="width:65%" class="block">
+      <h3>Unique JWTs</h3>
+      <div id="mainGrid" style="width: 100%" class="ag-theme-balham block"></div>
+      <div style="margin-left: 25px;">
+        <h3>Request/Response Data For Unique JWT</h3>
+        <div id="responseGrid" style="width: 100%" class="ag-theme-balham"></div>
+      </div>
+    </div>
     <div class="block">
+      <h3>Payload</h3>
       <pre><code id="jwtContents"></code></pre>
     </div>
-    
   </div>
-  <div>
-    <ul id="urlList"></ul>
+  <div style="margin-left: 25px" class="row">
+    <div class="block">
+      <h3>Response</h3>
+      <pre><code id="responseContents"></code></pre>
+    </div>
   </div>
   <script src="browser-polyfill.js"></script>
   <script src="panel.js"></script>
 </body>
-
 </html>

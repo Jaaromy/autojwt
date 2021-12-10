@@ -1,15 +1,13 @@
 {
     "name": "AutoJWT",
-    "description": "Request header dev tool",
-    "version": "0.1.0",
+    "description": "Browser developer extension to automatically find, parse, and copy JWT authorization tokens",
+    "version": "0.5.0",
     "manifest_version": 2,
     "permissions": [
         "storage",
         "activeTab",
         "clipboardWrite",
-        "clipboardRead",
-        "tabs",
-        "<all_urls>"
+        "tabs"
     ],
     "background": {
         "scripts": [

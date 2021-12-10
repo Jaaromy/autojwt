@@ -4,8 +4,10 @@
   "description": "Browser extension to automatically find, parse, and copy JWT authorization tokens",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "build": "webpack --config webpack.prod.js",
+    "watch": "webpack --watch --config webpack.dev.js",
+    "start:firefox": "web-ext run --source-dir ./dist/",
+    "build:firefox": "npm run build && web-ext build --overwrite-dest --source-dir ./dist/"
   },
   "private": "true",
   "repository": {
@@ -23,13 +25,16 @@
   "homepage": "https://github.com/Jaaromy/autojwt#readme",
   "devDependencies": {
     "copy-webpack-plugin": "^10.0.0",
+    "web-ext": "^6.6.0",
     "webextension-polyfill": "^0.8.0",
     "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "ag-grid-community": "^26.2.0",
     "highlight.js": "^11.3.1",
-    "jwt-decode": "^3.1.2"
+    "jwt-decode": "^3.1.2",
+    "moment": "^2.29.1"
   }
 }

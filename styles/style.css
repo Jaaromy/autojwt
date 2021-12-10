@@ -2,6 +2,17 @@ html {
     font-family: sans-serif;
   }
   
+  .row {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: left; /* for centering 3 blocks in the center */
+    /* justify-content: space-between; for space in between */ 
+  }
+  .block {
+    width: 100px;
+    margin-right: 20px;
+  }
     /* CSS */
   .button-50 {
     appearance: button;

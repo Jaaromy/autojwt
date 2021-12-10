@@ -14,8 +14,17 @@
   <button id="copy" class="button-50" >Copy JWT to Clipboard</button>
   <button id="jwtio" class="button-50" >Open on jwt.io</button>
   <button id="clear" class="button-50" >Clear</button>
-  <div id="myGrid" style="width: 100%" class="ag-theme-balham"></div>
-  <pre><code id="jwtContents"></code></pre>
+  <button id="add" class="button-50" >Add</button>
+  <div class="row">
+    <div id="myGrid" style="width: 65%" class="ag-theme-balham block"></div>
+    <div class="block">
+      <pre><code id="jwtContents"></code></pre>
+    </div>
+    
+  </div>
+  <div>
+    <ul id="urlList"></ul>
+  </div>
   <script src="browser-polyfill.js"></script>
   <script src="panel.js"></script>
 </body>
